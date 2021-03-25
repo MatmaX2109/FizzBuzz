@@ -17,9 +17,10 @@ public class FizzBuzzService {
 
     public String[] transform(final int startInterval, final int endInterval){
         return IntStream.rangeClosed(startInterval, endInterval)
-                .mapToObj(i -> fizzBuzzComponent.multipleOf(i, MultipleOf.FIFTEEN) ? "FizzBuzz" :
-                        fizzBuzzComponent.multipleOf(i, MultipleOf.THREE) ? "Fizz" :
-                                fizzBuzzComponent.multipleOf(i, MultipleOf.FIVE) ? "Buzz" : String.valueOf(i))
+                .mapToObj(i -> fizzBuzzComponent.hasString(i, MultipleOf.THREE.toString())?"alfresco":
+                        fizzBuzzComponent.multipleOf(i, MultipleOf.FIFTEEN) ? "FizzBuzz" :
+                                fizzBuzzComponent.multipleOf(i, MultipleOf.THREE) ? "Fizz" :
+                                        fizzBuzzComponent.multipleOf(i, MultipleOf.FIVE) ? "Buzz" : String.valueOf(i))
                 .toArray(String[]::new);
     }
 }

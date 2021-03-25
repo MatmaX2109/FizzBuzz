@@ -15,4 +15,8 @@ public enum MultipleOf {
         return value;
     }
 
+    public String toString(){
+        return String.valueOf(value);
+    }
+
 }
