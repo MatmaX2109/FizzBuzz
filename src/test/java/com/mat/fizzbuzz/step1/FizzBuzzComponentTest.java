@@ -5,6 +5,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -41,6 +44,31 @@ class FizzBuzzComponentTest {
     void hasStringInt(){
         assertTrue(fizzBuzzComponent.hasString(3, MultipleOf.THREE.toString()));
         assertFalse(fizzBuzzComponent.hasString(1, MultipleOf.THREE.toString()));
-
     }
+
+    @Test
+    void count(){
+        List list = new ArrayList();
+        list.add(SpecificWords.FIZZ.getValue());
+        list.add(SpecificWords.FIZZ.getValue());
+
+        assertEquals(fizzBuzzComponent.count(list, SpecificWords.FIZZ.getValue()), 2);
+        assertNotEquals(fizzBuzzComponent.count(list, SpecificWords.FIZZ.getValue()), 1);
+    }
+
+    @Test
+    public void countTheRest(){
+
+        List list = new ArrayList();
+        list.add(SpecificWords.FIZZ.getValue());
+        list.add(1);
+
+        assertEquals(fizzBuzzComponent.countTheRest(list),1);
+        assertNotEquals(fizzBuzzComponent.countTheRest(list),0);
+    }
+
+//    @Test
+//    private void existInArray(){
+//        assertTrue(fizzBuzzComponent.existInArray(SpecificWords.FIZZ.getValue(), SpecificWords.FIZZ.getValue()));
+//    }
 }

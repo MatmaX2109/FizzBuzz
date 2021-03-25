@@ -6,8 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @SpringBootApplication
@@ -36,8 +36,10 @@ public class Step1Application implements CommandLineRunner {
         System.out.println("startInterval = "+ startInterval);
         System.out.println("end interval = "+ endInterval);
 
-        System.out.print(Arrays.stream(fizzBuzzService.transform(Integer.parseInt(startInterval), Integer.parseInt(endInterval))).map(Object::toString)
-                .collect(Collectors.joining(", ")));
+        String[] transformation = fizzBuzzService.transform(Integer.parseInt(startInterval), Integer.parseInt(endInterval));
+        fizzBuzzService.printString(Arrays.asList(transformation));
+        fizzBuzzService.printReport(Arrays.asList(transformation));
+
     }
 
     public static void main(String[] args) {

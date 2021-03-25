@@ -6,7 +6,9 @@ import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,6 +21,7 @@ class FizzBuzzServiceTest {
     void init() {
         fizzBuzzService.setFizzBuzzComponent(new FizzBuzzComponent());
     }
+
     @Test
     void transform() {
         String[] test = fizzBuzzService.transform(1, 5);
@@ -28,8 +31,5 @@ class FizzBuzzServiceTest {
         assertTrue(test[2].equals("Fizz"));
         assertTrue(test[3].equals("4"));
         assertTrue(test[4].equals("Buzz"));
-
-//        Arrays.stream(test).forEach(System.out::print);
-
     }
 }
