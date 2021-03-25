@@ -29,21 +29,19 @@ public class FizzBuzzService {
                 .toArray(String[]::new);
     }
 
-    public void printReport(final List strings){
+    public String generateReport(final List strings){
         StringBuilder sb = new StringBuilder();
         sb.append(SpecificWords.FIZZ.getValue()).append(" ").append(fizzBuzzComponent.count(strings,SpecificWords.FIZZ.getValue())).append(" ");
         sb.append(SpecificWords.BUZZ.getValue()).append(" ").append(fizzBuzzComponent.count(strings,SpecificWords.BUZZ.getValue())).append(" ");
         sb.append(SpecificWords.FIZZBUZZ.getValue()).append(" ").append(fizzBuzzComponent.count(strings,SpecificWords.FIZZBUZZ.getValue())).append(" ");
         sb.append(SpecificWords.ALFRESCO.getValue()).append(" ").append(fizzBuzzComponent.count(strings,SpecificWords.ALFRESCO.getValue())).append(" ");
-        sb.append(SpecificWords.ALFRESCO.getValue()).append(" ").append(fizzBuzzComponent.countTheRest(strings)).append(" ");
+        sb.append(SpecificWords.ALFRESCO.getValue()).append(" ").append(fizzBuzzComponent.countTheRest(strings));
 
-        System.out.print(sb);
+        return sb.toString();
     }
 
-    public void printString(final List list){
-        System.out.print(list.stream()
-                .collect(Collectors.joining(", ")));
-        System.out.println("");
+    public String generateString(final List<String> list){
+        return String.join(", ", list);
 
     }
 
