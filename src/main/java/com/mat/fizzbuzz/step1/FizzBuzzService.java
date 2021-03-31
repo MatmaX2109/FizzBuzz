@@ -35,7 +35,7 @@ public class FizzBuzzService {
         sb.append(SpecificWords.BUZZ.getValue()).append(" ").append(fizzBuzzComponent.count(strings,SpecificWords.BUZZ.getValue())).append(" ");
         sb.append(SpecificWords.FIZZBUZZ.getValue()).append(" ").append(fizzBuzzComponent.count(strings,SpecificWords.FIZZBUZZ.getValue())).append(" ");
         sb.append(SpecificWords.ALFRESCO.getValue()).append(" ").append(fizzBuzzComponent.count(strings,SpecificWords.ALFRESCO.getValue())).append(" ");
-        sb.append(SpecificWords.ALFRESCO.getValue()).append(" ").append(fizzBuzzComponent.countTheRest(strings)).append(" ");
+        sb.append("Integer").append(" ").append(fizzBuzzComponent.countTheRest(strings)).append(" ");
 
         System.out.print(sb);
     }
