@@ -28,7 +28,7 @@ class FizzBuzzServiceTest {
 
         assertTrue(test[0].equals("1"));
         assertTrue(test[1].equals("2"));
-        assertTrue(test[2].equals("Fizz"));
+        assertTrue(test[2].equals("alfresco"));
         assertTrue(test[3].equals("4"));
         assertTrue(test[4].equals("Buzz"));
     }

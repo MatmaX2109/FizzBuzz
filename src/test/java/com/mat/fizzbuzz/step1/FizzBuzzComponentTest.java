@@ -61,7 +61,7 @@ class FizzBuzzComponentTest {
 
         List list = new ArrayList();
         list.add(SpecificWords.FIZZ.getValue());
-        list.add(1);
+        list.add("1");
 
         assertEquals(fizzBuzzComponent.countTheRest(list),1);
         assertNotEquals(fizzBuzzComponent.countTheRest(list),0);
